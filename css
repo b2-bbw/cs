@@ -1,0 +1,143 @@
+#include "pch.h"
+#include "CppUnitTest.h"
+using namespace Microsoft::VisualStudio::CppUnitTestFramework;
+namespace UnitTest1
+{
+	TEST_CLASS(UnitTest1)
+	{
+	public:
+
+		TEST_METHOD(TestMethod1)//整数加减乘除法运算
+		{
+			int question_number = 10;//题目数量,默认为1
+			int symbol_number =4;//运算符种类数,默认为1
+			char symbol_type[5] = {"+","-","*","/"};//运算符种类，默认为空
+			int max_number = 9;//最大数，默认为1
+			int brackets = 0;//是否有括号（1表示有括号，0表示没有括号）,默认为0
+			int decimal = 0;//是否有小数（1表示有小数，0表示没有小数）,默认为0
+			int print_style = 0;//用户选择输出方式（1表示输出到文件，0表示输出屏幕）,默认为0
+			float number[5] = { };//使用的数字,默认为0
+			char symbol[4] = { };//使用的运算符，默认为空
+			int i = 0;
+			float output[100][100];
+			for (i = 0;i < question_number;i++)
+			{
+				if (decimal == 0)//不是小数
+				{
+					if (print_style == 0)//输出到屏幕
+					{
+						if (brackets == 0)//没有括号
+						{
+							output[i][100] = { number[0],  number[1], number[2], number[3] };
+						}
+
+					}
+				}
+			}
+			float result[100][100];
+			for (i = 0;i < question_number;i++)
+			{
+				if (decimal == 0)//不是小数
+				{
+					if (print_style == 0)//输出到屏幕
+					{
+						if (brackets == 0)//没有括号
+						{
+							result[i][100]= { number[0],  number[1], number[2], number[3] };
+						}
+
+					}
+				}
+			}
+			Assert::AreEqual(result, output);
+		}
+		TEST_METHOD(TestMethod2)//小数加减乘除法运算
+		{
+			int question_number = 10;//题目数量,默认为1
+			int symbol_number = 4;//运算符种类数,默认为1
+			char symbol_type[5] = { "+","-","*","/" };//运算符种类，默认为空
+			int max_number = 9;//最大数，默认为1
+			int brackets = 0;//是否有括号（1表示有括号，0表示没有括号）,默认为0
+			int decimal = 1;//是否有小数（1表示有小数，0表示没有小数）,默认为0
+			int print_style = 0;//用户选择输出方式（1表示输出到文件，0表示输出屏幕）,默认为0
+			float number[5] = { };//使用的数字,默认为0
+			char symbol[4] = { };//使用的运算符，默认为空
+			int i = 0;
+			float output[100][100];
+			for (i = 0;i < question_number;i++)
+			{
+				if (decimal == 1)//是小数
+				{
+					if (print_style == 0)//输出到屏幕
+					{
+						if (brackets == 0)//没有括号
+						{
+							output[i][100] = { number[0],  number[1], number[2], number[3] };
+						}
+
+					}
+				}
+			}
+			float result[100][100];
+			for (i = 0;i < question_number;i++)
+			{
+				if (decimal == 1)//是小数
+				{
+					if (print_style == 0)//输出到屏幕
+					{
+						if (brackets == 0)//没有括号
+						{
+							result[i][100] = { number[0],  number[1], number[2], number[3] };
+						}
+
+					}
+				}
+			}
+			Assert::AreEqual(result, output);
+		}
+		TEST_METHOD(TestMethod1)//有括号加减乘除法运算
+		{
+			int question_number = 10;//题目数量,默认为1
+			int symbol_number = 4;//运算符种类数,默认为1
+			char symbol_type[5] = { "+","-","*","/" };//运算符种类，默认为空
+			int max_number = 9;//最大数，默认为1
+			int brackets = 1;//是否有括号（1表示有括号，0表示没有括号）,默认为0
+			int decimal = 1;//是否有小数（1表示有小数，0表示没有小数）,默认为0
+			int print_style = 0;//用户选择输出方式（1表示输出到文件，0表示输出屏幕）,默认为0
+			float number[5] = { };//使用的数字,默认为0
+			char symbol[4] = { };//使用的运算符，默认为空
+			int i = 0;
+			float output[100][100];
+			for (i = 0;i < question_number;i++)
+			{
+				if (decimal == 1)//是小数
+				{
+					if (print_style == 0)//输出到屏幕
+					{
+						if (brackets == 1)//有括号
+						{
+							output[i][100] = { number[0],  number[1], number[2], number[3] };
+						}
+
+					}
+				}
+			}
+			float result[100][100];
+			for (i = 0;i < question_number;i++)
+			{
+				if (decimal == 1)//是小数
+				{
+					if (print_style == 0)//输出到屏幕
+					{
+						if (brackets == 1)//有括号
+						{
+							result[i][100] = { number[0],  number[1], number[2], number[3] };
+						}
+
+					}
+				}
+			}
+			Assert::AreEqual(result, output);
+		}
+	};
+}
